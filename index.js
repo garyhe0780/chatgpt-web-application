@@ -9,7 +9,7 @@ app.use('/', express.static(__dirname + '/client')); // Serves resources from cl
 
 
 // setup routes
-require('./routes')(app)
+require('./settings')(app)
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Listening on port ${port}`));

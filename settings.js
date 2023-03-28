@@ -36,7 +36,8 @@ const upload = multer({
 
 module.exports = function (app) {
   // define your route map here
-  app.post("/transcribe", upload.single("audio"), require("./transcribe"));
+  app.post("/transcribe", upload.single("audio"), require("./app/routes/transcribe"));
 
-  app.get("/get-prompt-result", require("./get-prompt-result"));
+  app.get("/get-prompt-result", require("./app/routes/get-prompt-result"));
+  app.get("/get-prompt-result/add", require("./app/routes/get-prompt-result/add"));
 };
